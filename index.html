@@ -22,40 +22,29 @@
     <link rel="stylesheet" href="css/icomoon.css">
     <link rel="stylesheet" href="css/style.css">
 
-
-
 <style>
-
 /*======================================
-//--//-->   ABOUT
+//--//-->   GENERAL & ABOUT
 ======================================*/
-
 .about-mf .box-shadow-full {
   padding-top: 4rem;
   padding-bottom: 4rem;
 }
-
 .about-mf .about-img {
   margin-bottom: 2rem;
 }
-
 .about-mf .about-img img {
   margin-left: 10px;
 }
-
-
 .skill-mf .progress {
-  /* background-color: #cde1f8; */
   margin: .5rem 0 1.2rem 0;
   border-radius: 0;
   height: .7rem;
 }
-
 .skill-mf .progress .progress-bar {
   height: .7rem;
   background-color: #ffbd39;
 }
-
 
 /* Animation styles */
 #typing-animation {
@@ -67,10 +56,8 @@
   white-space: nowrap;
   animation: typing 3s steps(20, end) infinite;
 }
-
 #typing-animation:before {
   content: "";
-  /* position: absolute; */
   top: 0;
   left: 0;
   width: 0;
@@ -78,44 +65,118 @@
   background-color: #ccc;
   animation: typing-cursor 0.5s ease-in-out infinite;
 }
-
 @keyframes typing {
-  from {
-    width: 0;
-  }
-  to {
-    width: 100%;
-  }
+  from { width: 0; }
+  to { width: 100%; }
 }
-
 @keyframes typing-cursor {
-  from {
-    width: 5px;
-  }
-  to {
-    width: 0;
-  }
+  from { width: 5px; }
+  to { width: 0; }
 }
 
-
-/* project image zoom effect */
-
+/* Project image zoom effect */
 .zoom-effect {
   overflow: hidden;
   transition: transform 0.3s ease-out;
 }
-
 .zoom-effect:hover {
   transform: scale(1.1);
 }
 
+/*======================================
+//--//-->   MY SERVICES (RESPONSIVE)
+======================================*/
+.services-section {
+    text-align: center;
+    padding: 80px 20px;
+}
+.services-section h2 {
+    font-size: 40px;
+    margin-bottom: 30px;
+    color: #fff;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+.service-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Default: 3 columns */
+    gap: 25px;
+    max-width: 1100px;
+    margin: auto;
+}
+.service-box {
+    background: rgba(34, 34, 34, 0.5); /* Slightly darker background */
+    backdrop-filter: blur(10px);
+    padding: 30px;
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    transition: all 0.3s ease-in-out;
+    text-align: center;
+    cursor: pointer;
+}
+.service-box:hover {
+    transform: translateY(-10px);
+    background: rgba(255, 189, 57, 0.2);
+}
+.service-icon {
+    font-size: 45px;
+    margin-bottom: 15px;
+    transition: 0.3s;
+    color: #ffbd39; /* Use theme color for icons */
+}
+.service-box:hover .service-icon {
+    transform: scale(1.2) rotate(10deg);
+}
+.service-title {
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 5px;
+    color: #fff;
+}
 
+/*======================================
+//--//-->   RESPONSIVE MEDIA QUERIES
+======================================*/
+@media (max-width: 991px) { /* Tablets */
+    .service-container {
+        grid-template-columns: repeat(2, 1fr); /* 2 services per row */
+    }
+    .slider-text h1 {
+        font-size: 2.8rem; /* Smaller font on tablets */
+    }
+}
+
+@media (max-width: 767px) { /* Mobile phones */
+    .one-forth.d-flex {
+        text-align: center;
+        justify-content: center !important;
+    }
+    .slider-text h1 {
+        font-size: 2.2rem;
+    }
+    .slider-text h2 {
+        font-size: 1rem;
+        justify-content: center !important;
+    }
+    #typing-animation {
+        font-size: 22px; /* Adjust typing animation font size */
+    }
+    .service-container {
+        grid-template-columns: 1fr; /* 1 service per row */
+    }
+    .big, .big-2, .big-4 {
+        font-size: 4rem !important; /* Make big headings smaller */
+    }
+    .ftco-hireme h2 {
+        font-size: 1.8rem;
+    }
+    .ftco-about .img-about {
+        margin-bottom: 30px;
+    }
+}
 </style>
-
-
   </head>
   <body data-spy="scroll" data-target=".site-navbar-target" data-offset="300">
-	  
 	  
     <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar ftco-navbar-light site-navbar-target" id="ftco-navbar">
 	    <div class="container">
@@ -132,70 +193,61 @@
 			  <li class="nav-item"><a href="#services-section" class="nav-link"><span>My Services</span></a></li>
 	          <li class="nav-item"><a href="#project-section" class="nav-link"><span>Projects</span></a></li>
 	          <li class="nav-item"><a href="#contact-section" class="nav-link"><span>Contact</span></a></li>
-			 
-
 	        </ul>
 	      </div>
 	    </div>
-	  </nav>
-	  <section id="home-section" class="hero">
-		  <div class="home-slider  owl-carousel">
-	       <div class="slider-item ">
+	</nav>
+      
+	<section id="home-section" class="hero">
+		  <div class="home-slider owl-carousel">
+	       <div class="slider-item">
 	      	<div class="overlay"></div>
 	         <div class="container">
 	          <div class="row d-md-flex no-gutters slider-text align-items-end justify-content-end" data-scrollax-parent="true">
 	         	<div class="one-third js-fullheight order-md-last img" style="background-image:url(images/bg2.png);">  
 	          	 <div class="overlay"></div>
 	          	</div>
-		          <div class="one-forth d-flex  align-items-center ftco-animate" data-scrollax=" properties: { translateY: '70%' }">
+		          <div class="one-forth d-flex align-items-center ftco-animate" data-scrollax=" properties: { translateY: '70%' }">
 		          	<div class="text">
 		          		<span class="subheading">Hii!</span>
 			            <h1 class="mb-4 mt-3">I'm <span>Vishnu ram</span></h1>
 
-						<!-- Element to contain animated typing -->
 						<span id="typing-animation"></span>
 
 						<script>
-
-						// Initialize the typing animation
 						const typingAnimationElement = document.getElementById('typing-animation');
+						const typingTexts = ['Student ', 'Engineer  ', 'Graphic Designer ', 'Freelancer '];
+						let textIndex = 0;
+						let charIndex = 0;
 
-						// Create an array of typing text
-						const typingTexts = [
-						'Student ',
-						'Engineer  ',
-						'Graphic Designer ',
-						'Freelancer ',
-						];
-
-						// Create a function to display the typing animation for a given text
-						function playTypingAnimation(text) {
-						// Loop through each character and add it to the element
-						for (let i = 0; i < text.length; i++) {
-							setTimeout(() => {
-							typingAnimationElement.textContent += text[i];
-							}, i * 200); // Increase the delay to slow down the typing animation
+						function type() {
+							if (charIndex < typingTexts[textIndex].length) {
+								typingAnimationElement.textContent += typingTexts[textIndex].charAt(charIndex);
+								charIndex++;
+								setTimeout(type, 150);
+							} else {
+								setTimeout(erase, 2000);
+							}
 						}
 
-						// Once the animation is complete, reset the text and start over
-						setTimeout(() => {
-							typingAnimationElement.textContent = '';
-							playTypingAnimation(typingTexts[(typingTexts.indexOf(text) + 1) % typingTexts.length]);
-						}, text.length * 200);
+						function erase() {
+							if (charIndex > 0) {
+								typingAnimationElement.textContent = typingTexts[textIndex].substring(0, charIndex - 1);
+								charIndex--;
+								setTimeout(erase, 100);
+							} else {
+								textIndex = (textIndex + 1) % typingTexts.length;
+								setTimeout(type, 500);
+							}
 						}
-
-						// Start the typing animation loop
-						playTypingAnimation(typingTexts[0]);
-
+						document.addEventListener("DOMContentLoaded", function() { 
+							setTimeout(type, 500);
+						});
 						</script>
 
-						<br>
-						<br>
+						<br><br>
 			            <h2>I AM A FREELANCER</h2>
 						<h2 class="d-flex" style="margin-bottom: 0">With over 3.5 years of experience</h2> 
-						<!-- <br> -->
-			            <!-- <p><a href="https://www.youtube.com/@RishabhMishraOfficial" class="btn btn-primary py-3 px-4">YouTube</a> 
-							<a href="https://github.com/rishabhnmishra" class="btn btn-white btn-outline-white py-3 px-4">My works</a></p> --!>
 		            </div>
 		          </div>
 	        	</div>
@@ -204,347 +256,158 @@
 		</div>
     </section>
 
-
-
     <section class="ftco-about img ftco-section ftco-no-pb" id="about-section">
     	<div class="container">
-			<div class="row">
-				<div class="row d-flex align-items-stretch">
-				<!-- <div class="row d-flex"> -->
+			<div class="row d-flex align-items-stretch">
 					<div class="col-md-6 col-lg-5 d-flex">
 						<div class="img-about img d-flex align-items-stretch">
 							<div class="overlay">
 								<div class="row">
 									<div class="col-sm-6 col-md-5">
 									  <div class="about-img">
-										<img src="images/vrc_1.jpg" class="img-fluid rounded b-shadow-a" alt="">
+										<img src="images/vrc_1.jpg" class="img-fluid rounded b-shadow-a" alt="Vishnu Ram Profile Picture">
 									  </div>
 									</div>
-									<!-- Details next to profile image -->
 									<div class="col-sm-6 col-md-7">
 									  <div class="about-info">
 										<p><span class="title-s">Name: </span> <span>Vishnu ram</span></p>
 										<p><span class="title-s">Job Role: </span> <span>Freelancer</span></p>
-										<p><span class="title-s">Experience: </span> <span>3 Years 5 Months</span></p>
-										<p><span class="title-s">Address: </span> <span>Bokaro, jharkhand</span></p>
+										<p><span class="title-s">Experience: </span> <span>3.5+ Years</span></p>
+										<p><span class="title-s">Address: </span> <span>Bokaro, Jharkhand</span></p>
 									  </div>
 									</div>
 								  </div>
-
 								<div class="skill-mf">
 									<p class="title-s">Skills</p>
 									<span>HTML & CSS</span> <span class="pull-right">85%</span>
-									<div class="progress">
-										<div class="progress-bar" role="progressbar" style="width: 85%;" aria-valuenow="85" aria-valuemin="0"
-											aria-valuemax="100"></div>
-									</div>
-									
+									<div class="progress"><div class="progress-bar" role="progressbar" style="width: 85%;"></div></div>
 									<span>Thumbnail Designing</span> <span class="pull-right">95%</span>
-									<div class="progress">
-										<div class="progress-bar" role="progressbar" style="width: 95%" aria-valuenow="95" aria-valuemin="0"
-											aria-valuemax="100"></div>
-									</div>
-									
+									<div class="progress"><div class="progress-bar" role="progressbar" style="width: 95%"></div></div>
 									<span>Logo Designing</span> <span class="pull-right">90%</span>
-									<div class="progress">
-										<div class="progress-bar" role="progressbar" style="width: 90%" aria-valuenow="90" aria-valuemin="0"
-											aria-valuemax="100"></div>
-									</div>
-									
+									<div class="progress"><div class="progress-bar" role="progressbar" style="width: 90%"></div></div>
 									<span>Tools Development</span> <span class="pull-right">85%</span>
-									<div class="progress">
-										<div class="progress-bar" role="progressbar" style="width: 85%" aria-valuenow="85" aria-valuemin="0"
-											aria-valuemax="100"></div>
-									</div>
-									
+									<div class="progress"><div class="progress-bar" role="progressbar" style="width: 85%"></div></div>
 									<span>Video Editing</span> <span class="pull-right">80%</span>
-									<div class="progress">
-										<div class="progress-bar" role="progressbar" style="width: 80%" aria-valuenow="80" aria-valuemin="0"
-											aria-valuemax="100"></div>
-									</div>
+									<div class="progress"><div class="progress-bar" role="progressbar" style="width: 80%"></div></div>
 								</div>
 							</div>
 						</div>
 					</div>
-					
 					<div class="col-md-6 col-lg-7 pl-lg-5 pb-5">
 						<div class="row justify-content-start pb-3">
 							<div class="col-md-12 heading-section ftco-animate">
-								
 								<h1 class="big">About</h1>
 								<h2 class="mb-4">About Me</h2>
-								
-								<p>Hi, I'm Vishnu ram, a passionate freelancer specializing in thumbnail designing, HTML/CSS, Video Editing, logo designing, and tools development. I focus on creating visually appealing and functional designs that stand out. Whether it's a captivating thumbnail, a unique logo, or a powerful tool, I ensure high-quality results tailored to your needs.
-                    </p>
+								<p>Hi, I'm Vishnu ram, a passionate freelancer specializing in thumbnail designing, HTML/CSS, Video Editing, logo designing, and tools development. I focus on creating visually appealing and functional designs that stand out. Whether it's a captivating thumbnail, a unique logo, or a powerful tool, I ensure high-quality results tailored to your needs.</p>
 								<ul class="about-info mt-4 px-md-0 px-2">
 									<li class="d-flex"><span>Profile:</span> <span>Freelancer</span></li>
-									<li class="d-flex"><span>Domain:</span> <span> Digital Marketing</span></li>
-									<li class="d-flex"><span>Education:</span> <span>Computer operator and programming assistant</span></li>
+									<li class="d-flex"><span>Domain:</span> <span>Digital Marketing & Design</span></li>
+									<li class="d-flex"><span>Education:</span> <span>COPA, Diploma in CS</span></li>
 									<li class="d-flex"><span>Language:</span> <span>English, Hindi</span></li>
-								<!--	<li class="d-flex"><span>BI Tools:</span> <span>Microsoft Power BI, Looker &amp; Tableau</span></li> -->
-									<li class="d-flex"><span>Other Skills:</span> <span>PPT, Excel, Translation & transcription, communication, Email Marketing</span></li>
-									<li class="d-flex"><span>Interest:</span> <span>Traveling, Travel Photography, Teaching</span></li>
-									
+									<li class="d-flex"><span>Other Skills:</span> <span>PPT, Excel, Translation, Communication</span></li>
+									<li class="d-flex"><span>Interest:</span> <span>Traveling, Photography, Teaching</span></li>
 								</ul>
 							</div>
 						</div>
-
-
 						<div class="counter-wrap ftco-animate d-flex mt-md-3">
 							<div class="text">
 								<p class="mb-4">
-									<span class="number" data-number="15">0</span> <span>+</span>
-									<span>&nbsp; Projects completed</span>
+									<span class="number" data-number="15">0</span><span>+</span>
+									<span> Projects completed</span>
 								</p>
-								<p><a href=https://www.linkedin.com/in/vishnu-ram-94283824b?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app class="btn btn-primary py-3 px-3">LinkedIn</a></p>
+								<p><a href="https://www.linkedin.com/in/vishnu-ram-94283824b" class="btn btn-primary py-3 px-3">LinkedIn</a></p>
 							</div>
 						</div>
 					</div>
 				</div>
 			</div>
-		</div>
     </section>
 
-
-
-	
     <section class="ftco-section ftco-no-pb" id="resume-section">
     	<div class="container">
     		<div class="row justify-content-center pb-5">
           <div class="col-md-10 heading-section text-center ftco-animate">
           	<h1 class="big big-2">Resume</h1>
             <h2 class="mb-4">Resume</h2>
-            <p>I am a creative professional specializing in thumbnail designing, logo designing, and tool development. I also have strong expertise in photography, videography, and image/video editing. Through freelancing, I focus on creating high-quality and impactful designs and tools. Quality and creativity are my top priorities in every project I work on.
-
-</p>
+            <p>I am a creative professional specializing in thumbnail designing, logo designing, and tool development. I also have strong expertise in photography, videography, and image/video editing. Quality and creativity are my top priorities in every project.</p>
           </div>
         </div>
-
 		<div class="row">
-			<h1 class="big-4">Experience</h1>
-			<div class="underline"></div>
-		</div>
-		<br>
-		
-		<div class="row">
-				<div class="col-md-6">
-					<div class="resume-wrap ftco-animate">
-						<span class="date">2025-Present</span>
-						<h2>freelancer</h2>
-						<span class="position">Graphic designing</span>
-						<p class="mt-4">I am a freelance graphic designer specializing in logos, thumbnails, and branding, delivering high-quality and creative designs.
-							<ul>
-							     <li>Creative & Versatile Designer– Specializing in logo design, thumbnail design, and branding to create visually appealing and impactful graphics. </li>
-								<li>Strong Attention to Detail– Ensuring every design is polished, professional, and visually engaging and committed to delivering projects on time while maintaining high quality.</li>
-								<li>Freelancing Experience– Successfully working with clients across different industries, delivering high-quality designs tailored to their needs. </li>
-								
-							</ul>
-						</p>
-					</div>
-
-				</div>
-
-				<div class="col-md-6">
-					<div class="resume-wrap ftco-animate">
-						<span class="date">2021-2024</span>
-						<h2>Student & job Person</h2>
-						<span class="position">Data entry operator</span>
-						<span class="mt-4"> Dhanbad, jharkhand</span>
-						<p class="mt-4">Previously worked as a Data Entry Operator, handling accurate data entry, document management, and verification tasks. Proficient in MS Excel and Word, ensuring efficiency and data accuracy. 
-							<ul>
-								<li>I have previously worked as a Data Entry Operator, where I was responsible for handling and managing large volumes of data with accuracy and efficiency. My role involved entering, updating, and verifying data to ensure completeness and correctness. I also worked extensively with MS Excel, Word, and other data management tools to organize and maintain records systematically.</li>
-							<!--	<li>Delivered multiple training and mentorship sessions on analytical tools like SQL, MS Excel, Power BI, Tableau and Python.</li>
-								<li>Performed migration and enhancements for merchandising dashboard, involved data integration and its feature improvement.</li>-->
-							</ul>
-						</p>
-					</div>
-
+			<div class="col-md-6">
+				<div class="resume-wrap ftco-animate">
+					<span class="date">2021-Present</span>
+					<h2>Freelance Graphic Designer</h2>
+					<span class="position">Creative Design</span>
+					<p class="mt-4">Specializing in logos, thumbnails, and branding, delivering high-quality and creative designs for diverse clients.</p>
+					<ul>
+						<li>Creative & Versatile Designer for impactful graphics.</li>
+						<li>Strong Attention to Detail for polished, professional results.</li>
+						<li>Successfully working with clients across different industries.</li>
+					</ul>
 				</div>
 			</div>
-
-		<br>
-		<br>
-
+			<div class="col-md-6">
+				<div class="resume-wrap ftco-animate">
+					<span class="date">2021-2024</span>
+					<h2>Data Entry Operator</h2>
+					<span class="position">Dhanbad, Jharkhand</span>
+					<p class="mt-4">Handled accurate data entry, document management, and verification tasks. Proficient in MS Excel and Word, ensuring efficiency and data accuracy.</p>
+				</div>
+			</div>
+		</div>
+		<br><br>
 		<div class="row">
 			<h1 class="big-4">Education</h1>
 			<div class="underline"></div>
 		</div>
 		<br>
-		
 			<div class="row">
     			<div class="col-md-6">
     				<div class="resume-wrap ftco-animate">
     					<span class="date">2022-2024</span>
-    					<h2>Computer operator and programming assistant</h2>
-					<!--	<span class="mt-4">Dhanbad, jharkhand</span> -->
-    					<span class="position">baliapur institute of technology</span><br>
-						<span class="mt-4">Dhanbad, jharkhand</span>
-    					<p class="mt-4">Grade: First class.</p>
+    					<h2>Computer Operator & Programming Assistant (COPA)</h2>
+    					<span class="position">Baliapur Institute of Technology, Dhanbad</span>
+    					<p class="mt-4">Grade: First Class</p>
     				</div>
     			</div>
-
     			<div class="col-md-6">
     				<div class="resume-wrap ftco-animate">
     					<span class="date">2024-Present</span>
-    					<h2>Diploma in comuter science</h2>
-    					<span class="position">rkdf university </span>
-    					<p class="mt-4">Grade: N/A</p>
+    					<h2>Diploma in Computer Science</h2>
+    					<span class="position">RKDF University</span>
+    					<p class="mt-4">Currently Pursuing</p>
     				</div>
 				</div>
     		</div>
-
     		<div class="row justify-content-center mt-5">
     			<div class="col-md-6 text-center ftco-animate">
-    				<p><a href="https://drive.google.com/file/d/1kkE_fk3TQVZZ-cJUPVq9Bm-oqhduLfYL/view?usp=drive_link" class="btn btn-primary py-4 px-5">Download CV</a></p>
+    				<p><a href="https://drive.google.com/file/d/1kkE_fk3TQVZZ-cJUPVq9Bm-oqhduLfYL/view?usp=drive_link" target="_blank" class="btn btn-primary py-4 px-5">Download CV</a></p>
     			</div>
     		</div>
     	</div>
     </section>
-
-
-                        
-
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Services</title>
-    <style>
-        body {
-            font-family: 'Poppins', sans-serif;
-            background: #000; /* Pure Black Background */
-            margin: 0;
-            padding: 0;
-            color: #fff;
-        }
-
-        .services-section {
-            text-align: center;
-            padding: 80px 20px;
-        }
-
-        .services-section h2 {
-            font-size: 40px;
-            margin-bottom: 30px;
-            color: #fff;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-        }
-
-        .service-container {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr); /* 3 services per row */
-            gap: 25px;
-            max-width: 1100px;
-            margin: auto;
-        }
-
-        .service-box {
-            background: rgba(255, 255, 255, 0.1);
-            backdrop-filter: blur(10px);
-            padding: 25px;
-            border-radius: 12px;
-            box-shadow: 0 8px 20px rgba(255, 255, 255, 0.1);
-            transition: all 0.3s ease-in-out;
-            text-align: center;
-            cursor: pointer;
-        }
-
-        .service-box:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 10px 30px rgba(255, 255, 255, 0.2);
-        }
-
-        .service-icon {
-            font-size: 45px;
-            margin-bottom: 15px;
-            transition: 0.3s;
-            color: #fff;
-        }
-
-        .service-box:hover .service-icon {
-            transform: scale(1.2);
-        }
-
-        .service-title {
-            font-size: 22px;
-            font-weight: bold;
-            margin-bottom: 5px;
-            color: #fff;
-        }
-
-        /* Responsive adjustments */
-        @media (max-width: 1024px) {
-            .service-container {
-                grid-template-columns: repeat(2, 1fr); /* 2 services per row on tablets */
-            }
-        }
-
-        @media (max-width: 600px) {
-            .service-container {
-                grid-template-columns: repeat(1, 1fr); /* 1 service per row on mobile */
-            }
-        }
-    </style>
-
-
-
+    
     <section class="services-section" id="services-section">
-        <h2 class="mb-4">My Services</h2>
-        <div class="service-container">
-            <div class="service-box">
-                <div class="service-icon">🎨</div>
-                <div class="service-title">Thumbnail Design</div>
+        <div class="container">
+            <div class="row justify-content-center pb-5">
+                <div class="col-md-12 heading-section text-center ftco-animate">
+                    <h1 class="big big-2">Services</h1>
+                    <h2 class="mb-4">My Services</h2>
+                </div>
             </div>
-            <div class="service-box">
-                <div class="service-icon">🖌️</div>
-                <div class="service-title">Logo Design</div>
-            </div>
-            <div class="service-box">
-                <div class="service-icon">🛠️</div>
-                <div class="service-title">Tools Development</div>
-            </div>
-            <div class="service-box">
-                <div class="service-icon">📢</div>
-                <div class="service-title">Banner Design</div>
-            </div>
-            <div class="service-box">
-                <div class="service-icon">📧</div>
-                <div class="service-title">Email Marketing</div>
-            </div>
-            <div class="service-box">
-                <div class="service-icon">💻</div>
-                <div class="service-title">HTML & CSS</div>
-            </div>
-            <div class="service-box">
-                <div class="service-icon">📊</div>
-                <div class="service-title">Data Entry</div>
-            </div>
-            <div class="service-box">
-                <div class="service-icon">🌍</div>
-                <div class="service-title">Translation & Transcription</div>
-            </div>
-            <div class="service-box">
-                <div class="service-icon">💳</div>
-                <div class="service-title">Business Card Design</div>
+            <div class="service-container">
+                <div class="service-box"><div class="service-icon">🎨</div><div class="service-title">Thumbnail Design</div></div>
+                <div class="service-box"><div class="service-icon">🖌️</div><div class="service-title">Logo Design</div></div>
+                <div class="service-box"><div class="service-icon">🛠️</div><div class="service-title">Tools Development</div></div>
+                <div class="service-box"><div class="service-icon">📢</div><div class="service-title">Banner Design</div></div>
+                <div class="service-box"><div class="service-icon">📧</div><div class="service-title">Email Marketing</div></div>
+                <div class="service-box"><div class="service-icon">💻</div><div class="service-title">HTML & CSS</div></div>
+                <div class="service-box"><div class="service-icon">📊</div><div class="service-title">Data Entry</div></div>
+                <div class="service-box"><div class="service-icon">🌍</div><div class="service-title">Translation</div></div>
+                <div class="service-box"><div class="service-icon">💳</div><div class="service-title">Business Card Design</div></div>
             </div>
         </div>
     </section>
-
-</body>
-</html>
-
-
-
-						<div class="counter-wrap ftco-animate d-flex mt-md-3">
-							<div class="text">
-								<p class="mb-4">
-								<!--	<span class="number" data-number="15">0</span> <span>+</span> 
-									<span>&nbsp; Projects completed</span>
-								</p>
-								<p><a href=https://www.linkedin.com/in/vishnu-ram-94283824b?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app class="btn btn-primary py-3 px-3">LinkedIn</a></p>-->
-							</div>
-						</div>
-					</div>
-   
 
     <section class="ftco-section" id="project-section">
       <div class="container">
@@ -552,81 +415,67 @@
           <div class="col-md-7 heading-section text-center ftco-animate">
             <h1 class="big big-2">Projects</h1>
             <h2 class="mb-4">Projects</h2>
-            <p>sample of my projects on Thumbnail Designing, Logo Designing and Tools Development.</p>
+            <p>A sample of my projects on Thumbnail Designing, Logo Designing and Tools Development.</p>
           </div>
         </div>
         <div class="row d-flex">
           <div class="col-md-4 d-flex ftco-animate">
           	<div class="blog-entry justify-content-end">
-              <a href="https://github.com/Vishnuram40/vishnuramportfolio.io/blob/main/119.jpg" class="block-20 zoom-effect" style="background-image: url('images/119.jpg');">
-              </a>
+              <a href="https://github.com/Vishnuram40/vishnuramportfolio.io/blob/main/119.jpg" class="block-20 zoom-effect" style="background-image: url('images/119.jpg');"></a>
               <div class="text mt-3 float-right d-block">
-
-                <h3 class="heading"><a href="https://github.com/Vishnuram40/vishnuramportfolio.io/blob/main/119.jpg"></a>EXAMPLE OF BUSINESS CARD</h3>
-                <p>This is an example business card template that showcases a professional design and clear layout. The blue-white theme gives a corporate feel, and the profile section enhances branding.</p>
+                <h3 class="heading"><a href="https://github.com/Vishnuram40/vishnuramportfolio.io/blob/main/119.jpg">Example of Business Card</a></h3>
+                <p>A professional business card template with a clean layout and corporate feel, enhancing brand identity.</p>
               </div>
             </div>
           </div>
           <div class="col-md-4 d-flex ftco-animate">
           	<div class="blog-entry justify-content-end">
-              <a href="https://github.com/Vishnuram40/vishnuramportfolio.io/blob/main/127.png" class="block-20 zoom-effect" style="background-image: url('images/127.png');">
-              </a>
+              <a href="https://github.com/Vishnuram40/vishnuramportfolio.io/blob/main/127.png" class="block-20 zoom-effect" style="background-image: url('images/127.png');"></a>
               <div class="text mt-3 float-right d-block">
-
-                <h3 class="heading"><a href="https://github.com/Vishnuram40/vishnuramportfolio.io/blob/main/127.png">A bold and dynamic logo</a></h3>
-                <p>This logo represents "WAAR" with the tagline "Fantasy Isn't Fiction." It features a stylized warrior or ninja with a sharp blade, symbolizing strength, combat, and strategy. The bold typography and dark blue gradient give it a powerful and modern eSports or gaming-themed aesthetic.</p>
+                <h3 class="heading"><a href="https://github.com/Vishnuram40/vishnuramportfolio.io/blob/main/127.png">A Bold and Dynamic Logo</a></h3>
+                <p>This "WAAR" logo symbolizes strength and strategy, ideal for eSports or gaming brands with its powerful aesthetic.</p>
               </div>
             </div>
           </div>
           <div class="col-md-4 d-flex ftco-animate">
           	<div class="blog-entry">
-              <a href="https://github.com/Vishnuram40/vishnuramportfolio.io/blob/main/126.jpg" class="block-20 zoom-effect" style="background-image: url('images/126.jpg');">
-              </a>
+              <a href="https://github.com/Vishnuram40/vishnuramportfolio.io/blob/main/126.jpg" class="block-20 zoom-effect" style="background-image: url('images/126.jpg');"></a>
               <div class="text mt-3 float-right d-block">
-
-                <h3 class="heading"><a href="https://github.com/Vishnuram40/vishnuramportfolio.io/blob/main/126.jpg">This logo has a modern and futuristic design</a></h3>
-                <p>The "RIVEN" logo features a sleek, modern "R" with sharp angles and geometric cuts, giving it a futuristic and tech-inspired look. The typography is bold and unique, enhancing its gaming and esports appeal. The black-and-white color scheme adds a minimalist yet powerful touch, making it ideal for brands, teams, or digital projects.</p>
+                <h3 class="heading"><a href="https://github.com/Vishnuram40/vishnuramportfolio.io/blob/main/126.jpg">Modern & Futuristic Logo Design</a></h3>
+                <p>The "RIVEN" logo features a sleek, geometric "R" with a tech-inspired look, perfect for modern digital projects.</p>
               </div>
             </div>
           </div>
         </div>
-	<br>
-		<!-- added justify-content-center to center align the last two projects -->
-		<div class="row d-flex justify-content-center">  
+		<div class="row d-flex mt-4">
 			<div class="col-md-4 d-flex ftco-animate">
 				<div class="blog-entry justify-content-end">
-				<a href="https://github.com/Vishnuram40/vishnuramportfolio.io/blob/main/122.png" class="block-20 zoom-effect" style="background-image: url('images/122.png');">
-				</a>
+				<a href="https://github.com/Vishnuram40/vishnuramportfolio.io/blob/main/122.png" class="block-20 zoom-effect" style="background-image: url('images/122.png');"></a>
 				<div class="text mt-3 float-right d-block">
-  
-				  <h3 class="heading"><a href="https://github.com/Vishnuram40/vishnuramportfolio.io/blob/main/122.png">YouTube thumbnail is designed for a Free Fire 1v4 gameplay video</a></h3>
-				  <p>This Free Fire gaming thumbnail/poster features a 1v4 battle challenge with bold typography and an intense character design. The black and yellow color scheme adds energy and excitement, while the "Subscribe" button suggests it's designed for a gaming YouTube or streaming channel.</p>
+				  <h3 class="heading"><a href="https://github.com/Vishnuram40/vishnuramportfolio.io/blob/main/122.png">YouTube Gaming Thumbnail</a></h3>
+				  <p>A Free Fire 1v4 gameplay thumbnail with bold typography and an intense color scheme to attract viewers.</p>
 				</div>
 			  </div>
 			</div>
 			<div class="col-md-4 d-flex ftco-animate">
 				<div class="blog-entry justify-content-end">
-				<a href="https://vishnuram40.github.io/tools/" class="block-20 zoom-effect" style="background-image: url('images/220.jpg');">
-				</a>
+				<a href="https://nextgentoolv2.rf.gd/" class="block-20 zoom-effect" style="background-image: url('images/220.jpg');"></a>
 				<div class="text mt-3 float-right d-block">
-  
-				  <h3 class="heading"><a href="https://vishnuram40.github.io/tools/">This is my web tool website</a></h3>
-				  <p>My Tool website is a free online platform offering various useful tools like image compression, meta tag generation, word counting, color picker, and file conversion. It can be used without registration and also includes some advanced features.</p>
+				  <h3 class="heading"><a href="https://nextgentoolv2.rf.gd/">Web Tool Website</a></h3>
+				  <p>A free online platform offering various useful tools like image compression, meta tag generation, and more.</p>
 				</div>
 			  </div>
 			</div>
 			 <div class="col-md-4 d-flex ftco-animate">
           	<div class="blog-entry">
-              <a href="https://github.com/Vishnuram40/vishnuramportfolio.io/blob/main/channels4_banner.jpg" class="block-20 zoom-effect" style="background-image: url('images/166.jpg');">
-              </a>
+              <a href="https://github.com/Vishnuram40/vishnuramportfolio.io/blob/main/channels4_banner.jpg" class="block-20 zoom-effect" style="background-image: url('images/166.jpg');"></a>
               <div class="text mt-3 float-right d-block">
-
                 <h3 class="heading"><a href="https://github.com/Vishnuram40/vishnuramportfolio.io/blob/main/channels4_banner.jpg">YouTube Channel Banner</a></h3>
-                <p>VR TECH ZONE is a tech-focused YouTube channel delivering the latest updates, tutorials, and insights. The sleek black and gold banner reflects innovation and professionalism. Featuring social media icons, it highlights the channel’s presence across platforms. Bold typography ensures strong brand identity, making it a go-to place for tech enthusiasts!</p>
+                <p>VR TECH ZONE banner with a sleek black and gold design reflecting innovation for tech enthusiasts.</p>
               </div>
             </div>
           </div>
-		 </div>
+		</div>
 	  </div>
     </section>
 
@@ -634,56 +483,33 @@
       <div class="container">
 		<div class="row d-md-flex align-items-center">
           <div class="col-md d-flex justify-content-center counter-wrap ftco-animate">
-            <div class="block-18">
-              <div class="text">
-                <strong class="number" data-number="09">0</strong>
-                <span>Achievements</span>
-              </div>
-            </div>
+            <div class="block-18"><div class="text"><strong class="number" data-number="9">0</strong><span>Achievements</span></div></div>
           </div>
           <div class="col-md d-flex justify-content-center counter-wrap ftco-animate">
-            <div class="block-18">
-              <div class="text">
-                <strong class="number" data-number="15">0</strong>
-                <span>Projects</span>
-              </div>
-            </div>
+            <div class="block-18"><div class="text"><strong class="number" data-number="15">0</strong><span>Projects</span></div></div>
           </div>
           <div class="col-md d-flex justify-content-center counter-wrap ftco-animate">
-            <div class="block-18">
-              <div class="text">
-                <strong class="number" data-number="1000">0</strong>
-                <span>Mentored Students</span>
-              </div>
-            </div>
+            <div class="block-18"><div class="text"><strong class="number" data-number="1000">0</strong><span>Mentored Students</span></div></div>
           </div>
           <div class="col-md d-flex justify-content-center counter-wrap ftco-animate">
-            <div class="block-18">
-              <div class="text">
-                <strong class="number" data-number="500">0</strong>
-                <span>Cups of coffee</span>
-              </div>
-            </div>
+            <div class="block-18"><div class="text"><strong class="number" data-number="500">0</strong><span>Cups of coffee</span></div></div>
           </div>
         </div>
       </div>
+    </section>
 	
-	  <div class="ftco-section ftco-hireme img margin-top" style="background-image: url(images/bg_1.jpg)">
-			<!-- <div class="container"> -->
-				<div class="row justify-content-center">
-					<div class="col-md-7 ftco-animate text-center">
-						<h2>More projects on<span> Github  </span> </h2>
-						<div class="heading"> <h4> Transforming ideas into eye-catching thumbnails and logos while ensuring flawless data management. </h4>
-						<br>
-						<p><a href="https://github.com/Vishnuram40" class="btn btn-primary py-3 px-5">GitHub</a></p>
-						</div>
-					</div>
+	<!-- CORRECTED SECTION -->
+	<div class="ftco-section ftco-hireme img margin-top" style="background-image: url(images/bg_1.jpg); position: relative; z-index: 2;">
+		<div class="container">
+			<div class="row justify-content-center">
+				<div class="col-md-7 ftco-animate text-center">
+					<h2>More projects on<span> Github </span> </h2>
+					<p>Transforming ideas into eye-catching thumbnails and logos while ensuring flawless data management.</p>
+					<p class="mb-0"><a href="https://github.com/Vishnuram40" target="_blank" class="btn btn-primary py-3 px-5">GitHub</a></p>
 				</div>
-			<!-- </div> -->
+			</div>
 		</div>
-	</section>
-
-
+	</div>
 
     <section class="ftco-section contact-section ftco-no-pb" id="contact-section">
       <div class="container">
@@ -694,89 +520,67 @@
             <p>Below are the details to reach out to me!</p>
           </div>
         </div>
-
         <div class="row d-flex contact-info mb-5">
           <div class="col-md-6 col-lg-3 d-flex ftco-animate">
           	<div class="align-self-stretch box p-4 text-center">
-          		<div class="icon d-flex align-items-center justify-content-center">
-          			<span class="icon-map-signs"></span>
-          		</div>
+          		<div class="icon d-flex align-items-center justify-content-center"><span class="icon-map-signs"></span></div>
           		<h3 class="mb-4">Address</h3>
-	            <p>Bokaro, jharkhand</p>
+	            <p>Bokaro, Jharkhand</p>
 	          </div>
           </div>
           <div class="col-md-6 col-lg-3 d-flex ftco-animate">
           	<div class="align-self-stretch box p-4 text-center">
-          		<div class="icon d-flex align-items-center justify-content-center">
-          			<span class="icon-phone2"></span>
-          		</div>
+          		<div class="icon d-flex align-items-center justify-content-center"><span class="icon-phone2"></span></div>
           		<h3 class="mb-4">Contact Number</h3>
-	            <p><a href="tel://0101010101">+91 9060832669</a></p>
+	            <p><a href="tel://+919060832669">+91 9060832669</a></p>
 	          </div>
           </div>
           <div class="col-md-6 col-lg-3 d-flex ftco-animate">
           	<div class="align-self-stretch box p-4 text-center">
-          		<div class="icon d-flex align-items-center justify-content-center">
-          			<span class="icon-paper-plane"></span>
-          		</div>
+          		<div class="icon d-flex align-items-center justify-content-center"><span class="icon-paper-plane"></span></div>
           		<h3 class="mb-4">Email Address</h3>
-	            <p><a href="mailto:info@yoursite.com">vishnurambokaro@gmail.com</a></p>
+	            <p><a href="mailto:vishnurambokaro@gmail.com">vishnurambokaro@gmail.com</a></p>
 	          </div>
           </div>
           <div class="col-md-6 col-lg-3 d-flex ftco-animate">
           	<div class="align-self-stretch box p-4 text-center">
-          		<div class="icon d-flex align-items-center justify-content-center">
-          			<span class="icon-globe"></span>
-          		</div>
+          		<div class="icon d-flex align-items-center justify-content-center"><span class="icon-globe"></span></div>
           		<h3 class="mb-4">Download Resume</h3>
-	            <p><a href="https://drive.google.com/file/d/1kkE_fk3TQVZZ-cJUPVq9Bm-oqhduLfYL/view?usp=drive_link">resume link</a></p>
+	            <p><a href="https://drive.google.com/file/d/1kkE_fk3TQVZZ-cJUPVq9Bm-oqhduLfYL/view?usp=drive_link" target="_blank">Resume Link</a></p>
 	          </div>
           </div>
-
+        </div>
 		  <div class="container">
-			<br>
 			<br>
 			<div class="row justify-content-center">
 				<div class="col-md-7 ftco-animate text-center">
-					<h2>Have a<span> Question?  </span> <a href="https://docs.google.com/forms/d/e/1FAIpQLSdRvB8NLbC8xMFBA5EkeaF_0YFCHlwOr4K_NlvAlT8jf3ayuw/viewform?usp=header" class="btn btn-primary py-3 px-5">Click Here</a> </h2> 
+					<h2>Have a<span> Question?</span> <a href="https://docs.google.com/forms/d/e/1FAIpQLSdRvB8NLbC8xMFBA5EkeaF_0YFCHlwOr4K_NlvAlT8jf3ayuw/viewform?usp=header" target="_blank" class="btn btn-primary py-3 px-5">Click Here</a> </h2> 
 				</div>
 			</div>
-				<br>
-					<ul class="ftco-footer-social list-unstyled d-flex justify-content-center align-items-center mb-0">
-					  <li class="ftco-animate normal-txt">Find me on  </li>
-					 <!-- <li class="ftco-animate"><a href="https://www.youtube.com/@RishabhMishraOfficial"><span class="icon-youtube"></span></a></li> -->
-					  <li class="ftco-animate"><a href="https://www.linkedin.com/in/vishnu-ram-94283824b?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"><span class="icon-linkedin"></span></a></li>  
-					  <li class="ftco-animate"><a href="https://x.com/vishnu_ram98?t=O87s1Tth-JZV0bKrWlpFIQ&s=09"><span class="icon-twitter"></span></a></li>
-					<!--  <li class="ftco-animate"><a href="https://x.com/vishnu_ram98?t=O87s1Tth-JZV0bKrWlpFIQ&s=09"><span class="icon-facebook"></span></a></li> -->
-				      <li class="ftco-animate"><a href="https://www.instagram.com/vishnu_ram69?igsh=MXh0NXN0bHpidzY2YQ=="><span class="icon-instagram"></span></a></li>
-					</ul>
-				<br>
+			<br>
+			<ul class="ftco-footer-social list-unstyled d-flex justify-content-center align-items-center mb-0">
+				<li class="ftco-animate normal-txt">Find me on</li>
+				<li class="ftco-animate"><a href="https://www.linkedin.com/in/vishnu-ram-94283824b" target="_blank"><span class="icon-linkedin"></span></a></li>  
+				<li class="ftco-animate"><a href="https://x.com/vishnu_ram98" target="_blank"><span class="icon-twitter"></span></a></li>
+				<li class="ftco-animate"><a href="https://www.instagram.com/vishnu_ram69" target="_blank"><span class="icon-instagram"></span></a></li>
+			</ul>
+			<br>
 		   </div>
-   </div>
+      </div>
  </section>
 
-
- 
-	
     <footer class="ftco-footer ftco-section">
 		<div class="container">
 		  <div class="row">
 			<div class="col-md-12 text-center">
-			
-		
-  
-			  <p><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-	Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="icon-heart color-danger" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
-	<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p>
+			  <p>Copyright ©<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="icon-heart color-danger" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a></p>
 			</div>
 		  </div>
 		</div>
-	  </footer>
-
+	</footer>
 
   <!-- loader -->
   <div id="ftco-loader" class="show fullscreen"><svg class="circular" width="48px" height="48px"><circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee"/><circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10" stroke="#F96D00"/></svg></div>
-
 
   <script src="js/jquery.min.js"></script>
   <script src="js/jquery-migrate-3.0.1.min.js"></script>
@@ -790,7 +594,6 @@
   <script src="js/aos.js"></script>
   <script src="js/jquery.animateNumber.min.js"></script>
   <script src="js/scrollax.min.js"></script>
-  
   <script src="js/main.js"></script>
     
   </body>
